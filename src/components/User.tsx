@@ -2,13 +2,15 @@ import { FC } from 'react'
 
 import { userType } from '../store/slices/usersSlice'
 
+import userPhoto from "../../images/photo.png"
+
 import Dropdown from './Dropdown'
 
 const User: FC<userType> = ({username, city, companyName, status, id}) => {
 
     return (
         <div className={'user ' + status}>
-            <img src="../../images/photo.png" alt="Фото пользователя" className="user__photo" />
+            <img src={userPhoto} alt="Фото пользователя" className="user__photo" />
 
             <div className="user__content">
                 <div className='user__top'>

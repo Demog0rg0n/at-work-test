@@ -4,6 +4,8 @@ import NotificationButton from './NotificationButton'
 import FavoriteButton from './FavoriteButton'
 import { Link } from 'react-router-dom'
 
+import userPhoto from "../../images/photo.png"
+
 const Header = () => {
     return (
         <header className='header'>
@@ -16,7 +18,7 @@ const Header = () => {
                         <FavoriteButton />
 
                         <Link className='header__user' to={"/"}>
-                            <img src="../../images/photo.png" alt="" />
+                            <img src={userPhoto} alt="" />
                             <span>Ivan1234</span>
                         </Link>
                     </div>

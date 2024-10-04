@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
+import userPhoto from "../../images/photo.png"
+
 const UserPageLeft = () => {
 
     const [tabsState, setTabsState] = useState("Данные профиля")
 
     return (
         <div className='user-page__left'>
-            <img src="../../images/photo.png" alt="Фото пользователя" className="user__photo" />
+            <img src={userPhoto} alt="Фото пользователя" className="user__photo" />
 
             <ul className="user-page__tabs">
                 <li onClick={() => setTabsState("Данные профиля")} className={tabsState == "Данные профиля"? "active": ""}>Данные профиля</li>
