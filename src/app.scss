@@ -161,6 +161,14 @@ main{
 
 
 @media (max-width: 800px) {
+    .popup{
+        width: 271px;
+        height: 189px;
+        padding: 32px;
+        color: rgb(89, 89, 89);
+        font-size: 18px;
+        line-height: 25px;
+    }
     .container{
         max-width: 450px;
     }
