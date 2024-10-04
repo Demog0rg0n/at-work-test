@@ -14,7 +14,7 @@ const UserPageRight: FC<userType> = ({id, name, username, city, phone, email, co
     const cityInput = useInput(city)
     const phoneInput = useInput(phone)
     const emailInput = useInput(email)
-    const companyNameInput = useInput(email)
+    const companyNameInput = useInput(companyName)
 
     const dispatch = useAppDispatch()
 
