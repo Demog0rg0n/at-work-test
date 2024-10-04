@@ -1,0 +1,214 @@
+
+
+.users {
+    display: flex;
+    gap: 40px;
+    row-gap: 32px;
+    flex-wrap: wrap;
+}
+
+.user{
+    padding: 24px;
+    width: calc(100% / 3 - 80px / 3);
+    border-radius: 16px;
+    background: rgb(253, 253, 253);
+    display: flex;
+    gap: 20px;
+    height: 168px;
+
+    &__photo{
+        height: 120px;
+        width: 112px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    &__header{
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        height: 27px;
+        width: 100%;
+
+        h3{
+            color: rgb(34, 160, 188);
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 27px;
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            white-space: nowrap;
+            max-width: calc(100% - 34px);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 112px - 20px);
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    &__company{
+        color: rgb(89, 89, 89);
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        display: inline-block;
+    }
+
+    &__city{
+        color: rgb(156, 156, 156);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    &.archive{
+        background: rgb(253, 253, 253);
+
+        h3{
+            color: rgb(89, 89, 89);
+        }
+
+        .user__company{
+            color: rgb(156, 156, 156);
+        }
+
+        .user__city{
+            color: rgb(218, 218, 218);
+        }
+
+        .user__photo{
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+    }
+    &._skeleton{
+        background: rgb(218, 218, 218);
+    }
+}
+
+.dropdown {
+    position: relative;
+    height: 24px;
+    width: 24px;
+
+    svg {
+        path {
+            transition: .1s linear;
+        }
+        &:hover{
+            path {
+                fill: rgb(34, 160, 188);
+            }
+        }
+    }
+    &__popup{
+        position: absolute;
+        right: 0;
+        top: 30px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 200px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 2px 0px rgb(90, 90, 90);
+        background: rgb(253, 253, 253);
+        li {
+            color: rgb(22, 22, 22);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 19px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: .1s linear;
+            &:hover{
+                color: rgb(34, 160, 188);
+            }
+
+            a{
+                width: 100%;
+            }
+        }
+    }
+
+    &__button{
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1190px) {
+    .user {
+        width: calc(100% / 2 - 40px / 2);
+    }
+}
+
+@media (max-width: 800px) {
+    .main .underlined-title {
+        margin: 32px 0;
+    }
+    .user {
+        width: calc(100% / 2 - 20px / 2);
+        flex-direction: column;
+        padding: 16px;
+        height: 242px;
+        gap: 16px;
+        &__header {
+            height: 25px;
+            h3{
+                max-width: 94px;
+                font-size: 18px;
+                line-height: 25px;
+            }
+        }
+        &__content{
+            width: 100%;
+            gap: 7px;
+        }
+
+        &__photo {
+            width: 100%;
+        }
+        &__company{
+            color: rgb(89, 89, 89);
+            font-size: 14px;
+            line-height: 19px;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &__city {
+            font-size: 10px;
+            line-height: 14px;
+        }
+
+        .dropdown {
+            path {
+                transform: scale(0.63);
+                transform-origin: center;
+            }
+            &__popup{
+                width: 160px;
+            }
+        }
+    }
+    .users{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .user .dropdown__popup{
+        width: 140px;
+        li{
+            padding: 8px;
+        }
+    }
+}

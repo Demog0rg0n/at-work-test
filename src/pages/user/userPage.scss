@@ -1,0 +1,156 @@
+.user-page{
+
+    &__content{
+        display: flex;
+        gap: 40px;
+    }
+
+    &__left {
+        padding: 40px;
+        min-width: 360px;
+        img {
+            width: 280px;
+            height: 485px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+
+    &__right{
+        width: 100%;
+        padding: 40px;
+        padding-top: 0;
+    }
+
+    &__tabs{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 40px;
+        font-size: 16px;
+        line-height: 22px;
+        color: rgb(156, 156, 156);
+        font-weight: 500;
+
+        li{
+            cursor: pointer;
+            transition: .1s linear;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgb(218, 218, 218);
+            &.active {
+                color: rgb(22, 22, 22);
+                font-weight: 600;
+
+                &:hover {
+                    color: rgb(22, 22, 22);
+                }
+            }
+
+            &:hover{
+                color: rgb(34, 160, 188);
+            }
+        }
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        .button{
+            margin-top: 8px;
+        }
+    }
+}
+
+.page-navigation{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: rgb(89, 89, 89);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    padding: 20px 0;
+    margin-bottom: 24px;
+
+    .back-arrow_mobile{
+        display: none;
+    }
+}
+
+
+@media (max-width: 950px) {
+    .user-page{
+        &__left {
+            padding: 28px;
+        }
+        &__right {
+            padding: 28px;
+            padding-top: 0;
+        }
+    }
+}
+@media (max-width: 800px) {
+    .user-page{
+        &__content{
+            flex-direction: column;
+            
+            width: 100%;
+        }
+        &__left {
+            padding: 28px;
+            border-radius: 16px;
+            background: rgb(253, 253, 253);
+            min-width: initial;
+            img {
+                width: 100%;
+            }
+        }
+        &__right {
+            padding: 28px;
+            border-radius: 16px;
+            background: rgb(253, 253, 253);
+
+            .underlined-title{
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .button{
+                width: 100%;
+            }
+        }
+        &__tabs {
+            gap: 20px;
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+}
+@media (max-width: 500px) {
+    .user-page{
+
+        &__left {
+            padding: 28px;
+            img {
+                width: 100%;
+                height: 187px;
+            }
+        }
+    }
+
+    .page-navigation{
+        font-size: 16px;
+        line-height: 22px;
+        padding: 10px 0;
+        margin-bottom: 21px;
+        .back-arrow_mobile{
+            display: block;
+        }
+        .back-arrow_desktop{
+            display: none;
+        }
+    }
+
+}
